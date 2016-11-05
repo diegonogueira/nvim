@@ -1,5 +1,6 @@
 nnoremap <silent> ,t :Files<CR>
 nnoremap <silent> ,b :Buffers<CR>
+nnoremap ,g :GGrep<Space>
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
