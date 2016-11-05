@@ -2,6 +2,8 @@
 
 pip3 install neovim
 
+pip3 install --upgrade pip
+
 pip3 install --upgrade neovim
 
 # Install neovim
