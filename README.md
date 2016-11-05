@@ -1,6 +1,7 @@
-# Install config files
+# Install pip neovim
 
-git clone git@github.com:diegonogueira/nvim.git ~/.config/
+pip3 install neovim
+pip3 install --upgrade neovim
 
 # Install neovim
 
@@ -10,6 +11,6 @@ brew install neovim/neovim/neovim
 
 brew install fzf
 
-# Snippets
+# Get config files
 
-pip3 install neovim
+git clone git@github.com:diegonogueira/nvim.git ~/.config/
