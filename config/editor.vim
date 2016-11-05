@@ -145,3 +145,5 @@ nnoremap <Space> :
 nnoremap Q @q
 noremap ,q :qall<CR>
 noremap ,Q :qall!<CR>
+noremap ,w :w<CR>
+noremap ,a :saveas<Space>
