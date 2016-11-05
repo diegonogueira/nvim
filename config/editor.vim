@@ -143,3 +143,5 @@ noremap <Right> <Nop>
 
 nnoremap <Space> :
 nnoremap Q @q
+noremap ,q :qall<CR>
+noremap ,Q :qall!<CR>

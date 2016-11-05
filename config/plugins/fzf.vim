@@ -24,4 +24,4 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 " git grep
 command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+  \ call fzf#vim#grep('git grep --color=always --line-number '.shellescape(<q-args>), 0, <bang>0)
