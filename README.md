@@ -16,4 +16,4 @@ brew install fzf
 
 # Get config files
 
-git clone git@github.com:diegonogueira/nvim.git ~/.config/
+git clone git@github.com:diegonogueira/nvim.git ~/.config/nvim
