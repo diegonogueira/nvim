@@ -25,6 +25,7 @@ nvim +PlugInstall
 # Update plugins
 
 nvim +PlugUpgrade
+
 nvim +PlugUpdate
 
 # Clean unused plugins
