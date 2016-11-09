@@ -8,3 +8,5 @@ let g:loaded_ruby_provider = 1
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 call deoplete#enable()
+
+let g:deoplete#sources._ = ['buffer', 'member', 'tag', 'neosnippet', 'file']
