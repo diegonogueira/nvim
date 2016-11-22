@@ -12,7 +12,11 @@ brew install neovim/neovim/neovim
 
 # Fzf
 
+brew install the_silver_searcher
+
 brew install fzf
+
+/usr/local/opt/fzf/install
 
 # Get config files
 
