@@ -1,5 +1,7 @@
 # Install pip neovim
 
+brew install python3
+
 pip3 install neovim
 
 pip3 install --upgrade pip
