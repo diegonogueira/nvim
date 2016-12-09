@@ -1,6 +1,7 @@
 call plug#begin()
 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy search
+Plug 'brooth/far.vim'                               " Find and replace
 Plug 'trevordmiller/nova-vim'                       " nova theme
 Plug 'vim-airline/vim-airline'                      " airline
 Plug 'tpope/vim-surround'                           " parentheses, brackets, quotes, XML tags, and more
