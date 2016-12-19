@@ -119,13 +119,27 @@ end
 
 "set background=dark
 "colorscheme zenburn
-colorscheme nova
+"colorscheme nova
 
 "set background=light
 "colorscheme PaperColor
 
 "set background=dark
 "colorscheme solarized
+
+"" For Neovim 0.1.3 and 0.1.4
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"" Or if you have Neovim >= 0.1.5
+"if (has("termguicolors"))
+ "set termguicolors
+"endif
+
+"syntax enable
+"set background=light   " Setting light mode
+
+"colorscheme PaperColor
+"let g:airline_theme='PaperColor'
 
 " ============= copy and paste ======================
 

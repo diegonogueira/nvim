@@ -1,9 +1,15 @@
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+syntax enable
+set background=light
+
 call plug#begin()
 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy search
 Plug 'brooth/far.vim'                               " Find and replace
 Plug 'trevordmiller/nova-vim'                       " nova theme
+Plug 'altercation/vim-colors-solarized'             " solarized theme
 Plug 'vim-airline/vim-airline'                      " airline
+Plug 'vim-airline/vim-airline-themes'               " airline theme
 Plug 'tpope/vim-surround'                           " parentheses, brackets, quotes, XML tags, and more
 Plug 'Raimondi/delimitMate'                         " auto-completion for quotes, parens, brackets, etc
 Plug 'scrooloose/nerdtree'                          " tree navigation
@@ -26,6 +32,9 @@ Plug 'honza/vim-snippets'                           " snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
+
+colorscheme solarized
+let g:airline_theme='solarized'
 
 source ~/.config/nvim/config/plugins/fzf.vim
 source ~/.config/nvim/config/plugins/nerdtree.vim
