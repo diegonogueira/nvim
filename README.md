@@ -10,7 +10,7 @@ pip3 install --upgrade neovim
 
 # Install neovim
 
-brew install neovim/neovim/neovim
+brew install neovim
 
 # Fzf
 
