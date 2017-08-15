@@ -20,6 +20,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'chaoren/vim-wordmotion'
 Plug 'mattn/emmet-vim'
 Plug 'janko-m/vim-test'
+Plug 'kassio/neoterm'
 Plug 'elixir-lang/vim-elixir'
 Plug 'kana/vim-altr'
 Plug 'slim-template/vim-slim'
@@ -27,10 +28,9 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'w0rp/ale'
 Plug 'diegonogueira/Zenburn'
 Plug 'trevordmiller/nova-vim'
-" Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -84,6 +84,7 @@ autocmd VimEnter * wincmd l " move to left window
 " === Airline ===
 
 set laststatus=2
+let g:airline_highlighting_cache=1
 
 " === Dash ===
 
@@ -101,18 +102,43 @@ nmap <Leader>? <Plug>(easymotion-overwin-w)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
-" === Vim-test ===
+" === Vim-test and neoterm ===
 
-nmap <silent> <leader>tl :TestNearest<CR>
-nmap <silent> <leader>tb :TestFile<CR>
-nmap <silent> <leader>ta :TestSuite<CR>
-nmap <silent> <leader>t. :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
+" let g:neoterm_autoscroll = 1
+let g:neoterm_position = 'vertical'
+let g:neoterm_size = 50
+let g:neoterm_shell = "bash"
+nnoremap <silent> <leader>tq :call neoterm#closeAll()<CR>
+
+function! RunTest(cmd)
+   call neoterm#open() " Opens the neoterm window
+   call neoterm#normal('G') " Scroll to the end of the neoterm window
+   call neoterm#clear() " Opens the neoterm window
+   exec a:cmd
+endfunction
+
+" function! ToggleTerminalSize()
+  " if g:neoterm_size == 40
+    " let g:neoterm_size = 30
+  " else
+    " let g:neoterm_size = 40
+  " end
+
+  " call neoterm#close()
+  " call neoterm#open()
+
+  " execute ':wincmd j'
+" endfunction
+
 let test#filename_modifier = ":~"
-let test#strategy = "basic"
-" let test#strategy = "iterm"
-" let test#strategy = "neovim"
-let g:test#preserve_screen = 1
+let test#strategy = "neoterm"
+
+nmap <silent> <leader>tl :call RunTest('TestNearest')<CR>
+nmap <silent> <leader>tb :call RunTest('TestFile')<CR>
+nmap <silent> <leader>ta :call RunTest('TestSuite')<CR>
+nmap <silent> <leader>t. :call RunTest('TestLast')<CR>
+" nmap <silent> <leader>to :call ToggleTerminalSize()<CR>
+
 
 " === Vim wordmotion ===
 
@@ -160,40 +186,8 @@ let g:NERDSpaceDelims = 1
 
 " === deoplete ===
 
-" Disable Python 2 support
 let g:loaded_python_provider = 1
-" Disable Ruby support
 let g:loaded_ruby_provider = 1
-" Set python3 path
 let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:deoplete#sources._ = ['buffer', 'member', 'tag', 'ultisnips', 'file']
 call deoplete#enable()
-let g:deoplete#sources._ = ['buffer', 'member', 'tag', 'neosnippet', 'file']
-
-" === neosnippet ===
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
-
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
