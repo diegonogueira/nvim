@@ -14,7 +14,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'godlygeek/tabular'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'rizzatti/dash.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'chaoren/vim-wordmotion'
@@ -25,7 +24,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'kana/vim-altr'
 Plug 'slim-template/vim-slim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'w0rp/ale'
 Plug 'diegonogueira/Zenburn'
 Plug 'trevordmiller/nova-vim'
 Plug 'airblade/vim-gitgutter'
@@ -155,25 +153,10 @@ let g:wordmotion_mappings = {
 
 let g:ackprg = 'ag --vimgrep --ignore-dir=public/uploads --ignore-dir=tmp --ignore-dir=log --ignore-dir=doc --ignore="*.sql"'
 
-" === ALE ===
-
-" Write this in your vimrc file
-let g:ale_lint_on_text_changed = 'never'
-" You can disable this option too
-" if you don't want linters to run on opening a file
-let g:ale_lint_on_enter = 0
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
 " === Altr ===
 
 call altr#define('web/%/%.ex', 'test/%/%_test.exs', 'lib/%/%.ex')
 nmap <leader>tt <Plug>(altr-forward)
-
-" === Multiple cursors ===
-
-nnoremap <silent> <C-a> :MultipleCursorsFind <C-R>/<CR>
-vnoremap <silent> <C-a> :MultipleCursorsFind <C-R>/<CR>
 
 " === Gitgutter ===
 
