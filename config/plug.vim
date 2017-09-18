@@ -31,6 +31,8 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'thinca/vim-visualstar'
+Plug 'vim-scripts/CmdlineComplete'
 
 call plug#end()
 
@@ -174,3 +176,8 @@ let g:loaded_ruby_provider = 1
 let g:python3_host_prog = '/usr/local/bin/python3'
 " let g:deoplete#sources._ = ['buffer', 'member', 'tag', 'ultisnips', 'file']
 call deoplete#enable()
+
+" === visualstar ===
+
+map * <Plug>(visualstar-*)N
+map # <Plug>(visualstar-#)N
