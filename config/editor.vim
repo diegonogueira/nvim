@@ -111,7 +111,8 @@ set sidescroll=1
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
-set ignorecase      " Ignore case when searching...
+" set ignorecase      " Ignore case when searching...
+set smartcase
 nnoremap <silent> <Esc><Esc> :let @/=""<CR> " Cancel highlighting
 
 " ================ Theme ============================
@@ -150,16 +151,15 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :qall<CR>
 nnoremap <leader>a :saveas %<Tab>
-nnoremap <leader>R :edit!<CR>
+nnoremap <leader>E :edit!<CR>
 nnoremap <leader><Tab> :b#<cr>
-" nnoremap <leader>fr :%s//g<left><left>
-" vmap <leader>fr :%s//g<left><left>
 
 " Move lines around easily
-" nnoremap <leader>k :m-2<cr>==
-" nnoremap <leader>j :m+<cr>==
-" xnoremap <leader>k :m-2<cr>gv=gv
-" xnoremap <leader>j :m'>+<cr>gv=gv
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
 
 " Substitute
-vnoremap <leader>r "hy:%s/<C-r>h//Igc<left><left><left><left>
+vnoremap <leader>r "hy:%s/<C-r>h//Ig<left><left><left>
+vnoremap <leader>R :s//Ig<left><left><left>

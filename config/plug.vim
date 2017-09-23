@@ -146,8 +146,8 @@ nmap <silent> <leader>t. :call RunTest('TestLast')<CR>
 let g:wordmotion_mappings = {
   \ 'w' : '<leader>l',
   \ 'b' : '<leader>h',
-  \ 'e' : '<leader>j',
-  \ 'ge' : '<leader>k',
+  \ 'e' : '<leader>J',
+  \ 'ge' : '<leader>K',
   \ 'aw' : '<leader>l',
   \ 'iw' : 'i<space>l'
   \ }
@@ -180,8 +180,8 @@ call deoplete#enable()
 
 " === visualstar ===
 
-map * <Plug>(visualstar-*)N
-map g* <Plug>(visualstar-g*)N
-map # <Plug>(visualstar-#)N
+map * <Plug>(visualstar-*)``
+map g* <Plug>(visualstar-g*)``
+map # <Plug>(visualstar-#)``
 vmap <leader>gc g*cgn
 vmap <leader>gd g*dgn
