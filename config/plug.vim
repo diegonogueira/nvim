@@ -107,6 +107,7 @@ omap / <Plug>(easymotion-tn)
 " let g:neoterm_autoscroll = 1
 let g:neoterm_position = 'vertical'
 let g:neoterm_size = 50
+let g:neoterm_fixedsize = 50
 let g:neoterm_shell = "bash"
 nnoremap <silent> <leader>tq :call neoterm#closeAll()<CR>
 
@@ -180,4 +181,7 @@ call deoplete#enable()
 " === visualstar ===
 
 map * <Plug>(visualstar-*)N
+map g* <Plug>(visualstar-g*)N
 map # <Plug>(visualstar-#)N
+vmap <leader>gc g*cgn
+vmap <leader>gd g*dgn

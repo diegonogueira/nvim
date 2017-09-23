@@ -1,4 +1,4 @@
-set nonumber                    "Line numbers are good
+set number                    "Line numbers are good
 set relativenumber              "Relative numbers ( navigation )
 set cursorline                  "Highlight horizontal line
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -130,8 +130,14 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 noremap Y y$
+vmap y ygv<Esc>
+
+" duplicate lines ( up, down )
+vmap <leader>d yo<ESC>p
+vmap <leader>D YO<ESC>P
 
 " ====== force do use h,j,k,l navigation keys =======
+
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -154,3 +160,6 @@ nnoremap <leader><Tab> :b#<cr>
 " nnoremap <leader>j :m+<cr>==
 " xnoremap <leader>k :m-2<cr>gv=gv
 " xnoremap <leader>j :m'>+<cr>gv=gv
+
+" Substitute
+vnoremap <leader>r "hy:%s/<C-r>h//Igc<left><left><left><left>
