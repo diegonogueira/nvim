@@ -176,12 +176,13 @@ let g:loaded_python_provider = 1
 let g:loaded_ruby_provider = 1
 let g:python3_host_prog = '/usr/local/bin/python3'
 " let g:deoplete#sources._ = ['buffer', 'member', 'tag', 'ultisnips', 'file']
-call deoplete#enable()
+" call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
 
 " === visualstar ===
 
-map * <Plug>(visualstar-*)``
-map g* <Plug>(visualstar-g*)``
-map # <Plug>(visualstar-#)``
-vmap <leader>gc g*cgn
-vmap <leader>gd g*dgn
+map * <Plug>(visualstar-*)
+map g* <Plug>(visualstar-g*)
+map # <Plug>(visualstar-#)
+vmap <leader>gc g*``cgn
+vmap <leader>gd g*``dgn

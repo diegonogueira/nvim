@@ -12,24 +12,26 @@ IO.puts "==================="
 a
 endsnippet
 
-snippet ins
-IO.inspect ${0:${VISUAL}}
+snippet >p
+|> Map.put(:${1}, $1)
 endsnippet
 
-snippet %
-%{${1:}: $1, $0}
+snippet rp
+Repo.preload(:${1})
 endsnippet
 
-snippet ,,
-${1:}: $1, $0
+snippet rg
+Repo.get(${1})
 endsnippet
 
-snippet >
-|> $0
+snippet ro
+Repo.one
 endsnippet
 
-snippet dup
-${0:${VISUAL}}
+snippet ra
+Repo.all
+endsnippet
 
-$1${0:${VISUAL}}
+snippet ea
+Ecto.assoc(:${1})
 endsnippet
