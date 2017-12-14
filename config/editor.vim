@@ -139,7 +139,6 @@ vmap <leader>D YO<ESC>P
 
 " ====== force do use h,j,k,l navigation keys =======
 
-
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -163,3 +162,6 @@ xnoremap <leader>j :m'>+<cr>gv=gv
 " Substitute
 vnoremap <leader>r "hy:%s/<C-r>h//Ig<left><left><left>
 vnoremap <leader>R :s//Ig<left><left><left>
+
+" Editing
+nnoremap <leader>C ^C
