@@ -126,7 +126,7 @@ end
 
 " ============= copy and paste ======================
 
-vmap <C-c> "+yi
+vmap <C-c> "+y
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
@@ -149,15 +149,15 @@ noremap <Right> <Nop>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :qall<CR>
-nnoremap <leader>a :saveas %<Tab>
+nnoremap <leader>a :saveas %
 nnoremap <leader>E :edit!<CR>
 nnoremap <leader><Tab> :b#<cr>
 
 " Move lines around easily
-nnoremap <leader>k :m-2<cr>==
-nnoremap <leader>j :m+<cr>==
-xnoremap <leader>k :m-2<cr>gv=gv
-xnoremap <leader>j :m'>+<cr>gv=gv
+" nnoremap <leader>k :m-2<cr>==
+" nnoremap <leader>j :m+<cr>==
+" xnoremap <leader>k :m-2<cr>gv=gv
+" xnoremap <leader>j :m'>+<cr>gv=gv
 
 " Substitute
 vnoremap <leader>r "hy:%s/<C-r>h//Ig<left><left><left>
