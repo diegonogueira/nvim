@@ -159,7 +159,8 @@ let g:ackprg = 'ag --vimgrep --ignore-dir=public/uploads --ignore-dir=tmp --igno
 
 " === Altr ===
 
-call altr#define('web/%/%.ex', 'test/%/%_test.exs', 'lib/%/%.ex')
+call altr#remove_all()
+call altr#define('web/%/%.ex', 'lib/%/%.ex', 'test/%/%_test.exs')
 nmap <leader>tt <Plug>(altr-forward)
 
 " === Gitgutter ===
